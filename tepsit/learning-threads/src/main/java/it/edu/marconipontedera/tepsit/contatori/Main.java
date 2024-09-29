@@ -21,6 +21,7 @@ package it.edu.marconipontedera.tepsit.contatori;
 import java.util.Scanner;
 
 /**
+ * 
  * @author Stefano Lenzi &lt; stefano@lenzi.pro &gt;
  * 
  */
