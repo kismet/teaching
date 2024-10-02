@@ -22,7 +22,6 @@
 */
 package it.edu.marconipontedera.tepsit.teather;
 
-import java.time.Duration;
 import java.util.Scanner;
 
 /**
@@ -40,6 +39,7 @@ public class Main {
 			
 		Thread[] threads = new Thread[N_THREAD];
 		Biglietteria teatro = new Biglietteria();
+		
 		ThreadSpettatore[] pubblico = new ThreadSpettatore[N_THREAD];
 		for (int i = 0; i < threads.length; i++) {
 			pubblico[i] = new ThreadSpettatore(teatro);
