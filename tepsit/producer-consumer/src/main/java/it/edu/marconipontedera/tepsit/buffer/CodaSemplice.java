@@ -70,6 +70,18 @@ public class CodaSemplice implements Buffer {
 		}
 	}
 
+	public boolean isFull() {
+		synchronized (buffer) {
+			return nele == buffer.length;
+		}
+	}
+	
+	public boolean isEmpty() {
+		synchronized (buffer) {
+			return nele == 0;
+		}
+	}
+	
 	@Override
 	public int remove() {
 		int pos = -1;

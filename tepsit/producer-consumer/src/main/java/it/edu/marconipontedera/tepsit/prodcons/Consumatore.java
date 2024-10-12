@@ -33,19 +33,39 @@ import it.edu.marconipontedera.tepsit.buffer.Buffer;
  */
 public class Consumatore implements Runnable {
 
+	private static final int DEFAULT_LIMIT = 100;
 	private int limit;
 	private Buffer buffer;	
 	
+	public Buffer getBuffer() {
+		return buffer;
+	}
+
+	public void setBuffer(Buffer buf) {
+		this.buffer = buf;
+	}
+
 	public Consumatore(Buffer b, int l) {
 		this.limit = l;
 		this.buffer = b;
 	}
+	
+	public Consumatore() {
+		this(null, DEFAULT_LIMIT);
+	}
+	
+	public Consumatore(int limit) {
+		this(null, limit);
+	}
+	
+	
 	
 	@Override
 	public void run() {
 		int i = 0;
 		int pari = 0;
 		int dispari = 0;
+		final String name = Thread.currentThread().getName();
 		while (i < limit) {
 			int value = buffer.remove();
 			System.out.println("Estratto "+value);
@@ -54,7 +74,10 @@ public class Consumatore implements Runnable {
 			else dispari++;
 			System.out.printf("Pari: %d/%d\t Dispari: %d/%d\n",pari,i,dispari,i);
 		}
-
+		
+		System.out.println();
+		System.out.println(name+" - TERMINATO");
+		System.out.printf("Pari: %d/%d\t Dispari: %d/%d\n",pari,i,dispari,i);
 	}
 
 }
