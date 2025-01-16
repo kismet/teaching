@@ -16,7 +16,7 @@ typedef struct Node {
 /**
  * Inserimento in testa ad una lista
  */
-void insert(Node* head, int value);
+void insert(Node** head, int value);
 
 /**
  * Inserimento in coda ad una lista
@@ -86,7 +86,6 @@ bool contain(Node* left, Node* right);
  */
 void order(Node* head);
 
-
 /**
  * Toglie gli elementi duplicati dalla lista
  */
@@ -133,5 +132,29 @@ void prev(Node* head);
  */
 Node* slice(Node* head, int start, int end,int step);
 
+/**
+ * Rimuove, se esiste, l'elemento in prima posizione dalla lista e lo restituisce altrimenti nullptr
+ */
+Node* remove_first(Node* head);
 
+/**
+ * Rimuove, se esiste, l'elemento in ultima posizione dalla lista e lo restituisce altrimenti nullptr
+ */
+Node* remove_last(Node* head);
+
+/**
+ * Rimuove, se esiste, l'elemento di posizione pos dalla lista e lo restituisce altrimenti nullptr
+ */
+Node* remove_at(Node* head,int pos);
+
+/**
+ * Aggiunge a tutti i nodi della lista il valore value
+ */
+void add(Node* head,int value);
+
+/**
+ * Rimuove dalla lista src gli elementi della lista diff
+ * (questa implementazione richiede scelte progettuali)
+ */
+void list_diff(Node* src, Node* diff);
 #endif //SIMPLE_LIST_H

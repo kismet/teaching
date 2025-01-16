@@ -6,47 +6,31 @@ using namespace  std;
 /**
 * Inserimento in testa ad una lista
  */
-void insert(Node* head, int value) {
- //Creo il nodo con il valore da inserire
- Node* nuovo = new Node;
- nuovo->info = value;
-
- //Aggancio il nodo alla lista
- nuovo->next = head->next;
-
- //Aggiorno la testa
- head->next = nuovo;
+void insert(Node** head, int value) {
+ Node* nodo = new Node;
+ nodo->next = nullptr;
+ nodo->info = value;
+ Node* testa=*head;
+ if(testa!=nullptr) {
+  nodo->next = testa;
+ }
+ *head = nodo;
 }
 
 /**
  * Inserimento in coda ad una lista
  */
 void append(Node* head, int value) {
- //Creo il nodo con il valore da inserire
- Node* nuovo = new Node;
- nuovo->info = value;
-
- //Cerco la fine della lista
- Node* last=head->next;
- while (last!=nullptr) {
-  head=last;
-  last=head->next;
- }
- //Head ora punta all'ultimo nodo e quindi ci aggiungo il nuovo nodo
- head->next = nuovo;
- //Non è necessario perchè li inizializzo correttamente
- nuovo->next = nullptr;
 }
 
 /**
  * Stampa il contenuto di una lista
  */
 void print(Node* head) {
- Node* current = head->next;
- while (current!=nullptr) {
-  cout<<current->info;
-  current = current->next;
-  if(current != nullptr) {
+ while (head!=nullptr) {
+  cout<<head->info;
+  head = head->next;
+  if(head != nullptr) {
    cout<<" -> ";
   }
  }
@@ -58,7 +42,7 @@ void print(Node* head) {
  */
 int size(Node* head) {
  int i=0;
- while (head->next!=nullptr) {
+ while (head!=nullptr) {
   i++;
   head = head->next;
  }
