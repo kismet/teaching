@@ -13,6 +13,9 @@ void process_odd(int n);
 //Processo che stampa i numeri pari minori di N
 void process_even(int n);
 
+//Procedura per aspettare x millisecondi 
+void ms_sleep(int x);
+
 const int NCHILDREN = 2;
 
 int main(int argc,char *argv[]){
@@ -53,10 +56,19 @@ int main(int argc,char *argv[]){
     return EXIT_SUCCESS;
 }
 
+void ms_sleep(int ms){
+    int s = ms/1000;
+    sleep(s);
+    ms = ms % 1000;
+    int us = ms * 1000;
+    usleep(us);
+}
+
 void process_odd(int n){
     int mypid = getpid();
     for(int i=1;i<n;i+=2){
-        printf("%d: Conto %d\n",mypid,i);
+        printf("%d: Pari    %5d\n",mypid,i);
+        ms_sleep(i);
     }
     exit(EXIT_SUCCESS);
 }
@@ -65,7 +77,8 @@ void process_odd(int n){
 void process_even(int n){
     int mypid = getpid();
     for(int i=0;i<n;i+=2){
-        printf("%d: Conto %d\n",mypid,i);
+        printf("%d: Dispari %5d\n",mypid,i);
+        ms_sleep(i);
     }
     exit(EXIT_SUCCESS);    
 }
