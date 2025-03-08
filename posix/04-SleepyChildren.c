@@ -15,27 +15,28 @@ int main(int argc,char *argv[]){
     printf("Quanti processi vuoi creare\n -> ");
     scanf("%d",&nchildren);
     int nsleep[nchildren];
-    
+
     for(int i=0;i<nchildren;i++){
         int seconds;
-        printf("Quanti deve aspettare il processo %d\n -> ",(i+1));
+        printf("Quanto deve aspettare il processo %d\n -> ",(i+1));
         scanf("%d",&seconds);
         nsleep[i]=seconds;
     }
-    
-    
+
+
     for(int i=0;i<nchildren;i++){
         child = fork();
         if (child == 0){
             exit(sleepy_child(nsleep[i]));
         }
-    }    
-    
+        printf("Avviato il processo %d° figlio con pid %d\n -> ",(i+1),child);
+    }
+
     for(int i=0;i<nchildren;i++){
         dead = wait(&status);
         printf("%d: %d e' terminato con codice %d\n",myself,dead,status);
-    }     
-    
+    }
+
     return 0;
 }
 
@@ -44,6 +45,6 @@ int sleepy_child(int n){
     pid = getpid();
     printf("%d: Ciao a tutti sono un figlio assonato, vado a letto...\n",pid);
     sleep(n);
-    printf("%d: Una bella dormita di %d secondi\n",pid,n);
+    printf("%d: Una bella dormita di %d secondi, addio!\n",pid,n);
     return 0;
 }
