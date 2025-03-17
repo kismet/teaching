@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<corsi>
+    <Corso id="AA" type="Laboratorio (in presenza)">
+        <Iscrizioni>
+            <Iscritti>15</Iscritti>
+            <Minimo>5</Minimo>
+        </Iscrizioni>
+        <Titolo>Introduzione ad After Effects per la Didattica</Titolo>
+        <Progresso>
+            <Ore>12</Ore>
+            <Pianificate>0</Pianificate>
+        </Progresso>
+    </Corso>
+    <Corso id="Moodle" type="Laboratorio (in presenza)">
+        <Iscrizioni>
+            <Iscritti>16</Iscritti>
+            <Minimo>8</Minimo>
+        </Iscrizioni>
+        <Titolo>Utilizzo pratico di Moodle 4.x per eLearning: Quiz e Didattica</Titolo>
+        <Progresso>
+            <Ore>12</Ore>
+            <Pianificate>0</Pianificate>
+        </Progresso>
+    </Corso>
+    <Corso id="Tool" type="Laboratorio (in presenza)">
+        <Iscrizioni>
+            <Iscritti>24</Iscritti>
+            <Minimo>8</Minimo>
+        </Iscrizioni>
+        <Titolo>Utilizzo strumenti di lavoro in modo efficace Teams, OneDrive, Documenti Condivisi, SmartBoard e Calcolatrici Programmabili</Titolo>
+        <Progresso>
+            <Ore>10</Ore>
+            <Pianificate>10</Pianificate>
+        </Progresso>
+    </Corso>
+    <Corso id="AR" type="Laboratorio (in presenza)">
+        <Iscrizioni>
+            <Iscritti>22</Iscritti>
+            <Minimo>8</Minimo>
+        </Iscrizioni>
+        <Titolo>Uso della piattaforma di Automazione Robotica</Titolo>
+        <Progresso>
+            <Ore>16</Ore>
+            <Pianificate>0</Pianificate>
+        </Progresso>
+    </Corso>
+    <Corso id="PYT" type="Laboratorio (in presenza)">
+        <Iscrizioni>
+            <Iscritti>11</Iscritti>
+            <Minimo>5</Minimo>
+        </Iscrizioni>
+        <Titolo>Uso di Python per didattica Innovativa e interattiva nelle STEAM</Titolo>
+        <Progresso>
+            <Ore>15</Ore>
+            <Pianificate>15</Pianificate>
+        </Progresso>
+    </Corso>
+    <Corso id="CYB" type="Laboratorio (in presenza)">
+        <Iscrizioni>
+            <Iscritti>10</Iscritti>
+            <Minimo>8</Minimo>
+        </Iscrizioni>
+        <Titolo>Networking e CyberSecurity</Titolo>
+        <Progresso>
+            <Ore>16</Ore>
+            <Pianificate>16</Pianificate>
+        </Progresso>
+    </Corso>
+    <Corso id="IA3" type="Corso Online (sincrono)">
+        <Iscrizioni>
+            <Iscritti>15</Iscritti>
+            <Minimo>15</Minimo>
+        </Iscrizioni>
+        <Titolo>Approfondimento dell'uso dell'IA generativa per formazione di docenti-trainer (IA #3)</Titolo>
+        <Progresso>
+            <Ore>20</Ore>
+            <Pianificate>0</Pianificate>
+        </Progresso>
+    </Corso>
+    <Corso id="IA5" type="Corso Online (sincrono)">
+        <Iscrizioni>
+            <Iscritti>27</Iscritti>
+            <Minimo>15</Minimo>
+        </Iscrizioni>
+        <Titolo>Gen AI e capitale cognitivo: Strategie e strumenti (IA #5)</Titolo>
+        <Progresso>
+            <Ore>12</Ore>
+            <Pianificate>0</Pianificate>
+        </Progresso>
+    </Corso>
+    <Corso id="IA6" type="Corso Online (sincrono)">
+        <Iscrizioni>
+            <Iscritti>15</Iscritti>
+            <Minimo>15</Minimo>
+        </Iscrizioni>
+        <Titolo>Creatività e AI Generativa. Tra bit e progetto artistico (IA #6)</Titolo>
+        <Progresso>
+            <Ore>12</Ore>
+            <Pianificate>0</Pianificate>
+        </Progresso>
+    </Corso>
+    <Corso id="IA12" type="Corso Online (sincrono)">
+        <Iscrizioni>
+            <Iscritti>36</Iscritti>
+            <Minimo>15</Minimo>
+        </Iscrizioni>
+        <Titolo>Uso della IA nelle metodologie didattiche (IA #12)</Titolo>
+        <Progresso>
+            <Ore>18</Ore>
+            <Pianificate>0</Pianificate>
+        </Progresso>
+    </Corso>
+    <Corso id="Unity" type="Laboratorio (in presenza)">
+        <Iscrizioni>
+            <Iscritti>12</Iscritti>
+            <Minimo>8</Minimo>
+        </Iscrizioni>
+        <Titolo>Da Introduzione all'uso Unity per la Didattica</Titolo>
+        <Progresso>
+            <Ore>20</Ore>
+            <Pianificate>0</Pianificate>
+        </Progresso>
+    </Corso>
+</corsi>
