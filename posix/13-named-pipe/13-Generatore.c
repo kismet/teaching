@@ -47,8 +47,13 @@ void generatore(int file, int n, int us){
 	int seed = ( time(NULL)*my ) % 1009;
 	srand(seed);
   for(int i=0;i<n;i++){
-    int value = rand() % (1000*1000);
-    write(file,&value,sizeof(value));
+    int value = rand() % (1<<17);
+    int check;
+    check = write(file,&value,sizeof(value));
+    if(check == -1){
+      printf("Non piu' possibile usare la PIPE\n");
+      return;
+    }
     usleep(us);
   }
 }

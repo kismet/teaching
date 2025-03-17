@@ -20,11 +20,19 @@ int main(int argc,char* argv[]){
   }
 
   int n;
+  int c = 0;
   do{
-    read(num_file,&n,sizeof(n));
-    if(n>0){
-      printf("Ho ricevuto (%d) ed il suo quadrato e' (%d)",n, n*n);
+    int check = read(num_file,&n,sizeof(n));
+    if(check == -1 || check != sizeof(n)){
+      printf("%5d: Non piu' possibile usare la PIPE\n", check);
+      break;
     }
+    if( n>0 && n<(1<<15) ){
+      printf("%5d: Ho ricevuto (%d) ed il suo quadrato e' (%d)\n", c, n, n*n);
+    } else if( n>0 && n>=(1<<15) ){
+      printf("%5d: Ho ricevuto (%d) ma troppo grande per calcolare il quadrato\n", c, n, n*n);
+    }
+    c++;
   }while(n>=0);
   n=-1;
   close(num_file);
