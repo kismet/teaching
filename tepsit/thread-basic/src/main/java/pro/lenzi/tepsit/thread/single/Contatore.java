@@ -3,13 +3,13 @@ package pro.lenzi.tepsit.thread.single;
 public class Contatore {
 
 	private static final int NUMBER_PER_ROWS = 10;
+	
 	//Che visibilità hanno questi attributi?
-	int inizio;
-	int fine;
-	int passo;
+	private int inizio;
+	private int fine;
+	private int passo;
 	
 	public Contatore(int inizio, int fine, int passo) {
-		super();
 		this.inizio = inizio;
 		this.fine = fine;
 		this.passo = passo;

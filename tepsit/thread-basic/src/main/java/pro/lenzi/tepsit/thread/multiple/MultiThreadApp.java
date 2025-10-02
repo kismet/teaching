@@ -4,27 +4,37 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.Scanner;
 
+import javax.xml.stream.events.StartDocument;
+
 public class MultiThreadApp {
 	
-	private static int i;
-	private static int f;
-	private static int p;
-	private static int t;
+	private static int inizio;
+	private static int fine;
+	private static int step;
+	private static int nThreads;
 
 	
 	public void startThemAll() {
-		for (int j = 0; j < t; j++) {
-			FriendlyCounter c = new FriendlyCounter(i,f,p);
-			//c.beNice();
+		for (int j = 0; j < nThreads; j++) {
+			FriendlyCounter c = new FriendlyCounter(inizio,fine,step);
+			c.beNice();
 			Thread thread = new Thread(c,"Contatore-"+j);
 			thread.start();
-		}		
+		}	
 	}
 	
+	public void whoIsCounting() {
+		FriendlyCounter unico = new FriendlyCounter(inizio,fine,step);
+		for (int j = 0; j < nThreads; j++) {
+			Thread thread = new Thread(unico,"Contatore-"+j);
+			thread.start();
+		}		
+	}	
+	
 	public void noZombieAllowed() {
-		Thread[] threads = new Thread[t];
+		Thread[] threads = new Thread[nThreads];
 		for (int j = 0; j < threads.length; j++) {
-			FriendlyCounter c = new FriendlyCounter(i,f,p);
+			FriendlyCounter c = new FriendlyCounter(inizio,fine,step);
 			threads[j] = new Thread(c,"Contatore-"+j);
 		}
 		for (int j = 0; j < threads.length; j++) {
@@ -42,28 +52,26 @@ public class MultiThreadApp {
 		}		
 	}
 	
-	public void whoIsCounting() {
-		FriendlyCounter unico = new FriendlyCounter(i,f,p);
-		for (int j = 0; j < t; j++) {
-			Thread thread = new Thread(unico,"Contatore-"+j);
-			thread.start();
-		}		
-	}
+
 	
 	public static void main(String[] args) {
 		Scanner s = new Scanner(new BufferedReader(new InputStreamReader(System.in)));
 		
 		System.out.print("Inserisci il valore di partenza\n -> ");
-		i = s.nextInt();
+		inizio = s.nextInt();
 		
 		System.out.print("Inserisci il valore finale\n -> ");
-		f = s.nextInt();
+		fine = s.nextInt();
 		
 		System.out.print("Inserisci il passo\n -> ");
-		p = s.nextInt();
+		step = s.nextInt();
 
 		System.out.print("Quanti Thread vuoi avviare\n -> ");
-		t = s.nextInt();		
+		nThreads = s.nextInt();		
+		
+		MultiThreadApp app = new MultiThreadApp();
+		
+		app.whoIsCounting();
 				
 	}
 }

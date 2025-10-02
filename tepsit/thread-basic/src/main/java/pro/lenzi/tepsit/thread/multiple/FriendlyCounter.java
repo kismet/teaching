@@ -1,7 +1,5 @@
 package pro.lenzi.tepsit.thread.multiple;
 
-import java.time.Duration;
-
 public class FriendlyCounter implements Runnable {
 
 	private static final int NUMBER_PER_ROWS = 10;
@@ -13,6 +11,7 @@ public class FriendlyCounter implements Runnable {
 	int passo;
 	
 	boolean friendly = false;
+//	private int corrente;
 	
 	public FriendlyCounter(int inizio, int fine, int passo) {
 		super();
@@ -27,8 +26,8 @@ public class FriendlyCounter implements Runnable {
 	
 	public void conta() {
 		int max = 0;
-		for(int i=inizio;i<fine;i+=passo) {
-			System.out.printf("%4d ",i);
+		for(int corrente=inizio;corrente<fine;corrente+=passo) {
+			System.out.printf("%4d ",corrente);
 			if(max % NUMBER_PER_ROWS == 0) {
 				System.out.println();
 			}
