@@ -1,19 +1,17 @@
-package pro.lenzi.tepsit.thread.share;
+package pro.lenzi.tepsit.thread.resource;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.Scanner;
 
-import javax.xml.stream.events.StartDocument;
-
-public class CountingTogether {
+public class CountingTogetherResource {
 	
 	private int inizio;
 	private int fine;
 	private int step;
 	private int nThreads;
 
-	public CountingTogether(int s,int e,int d,int n) {
+	public CountingTogetherResource(int s,int e,int d,int n) {
 		this.inizio = s;
 		this.fine = e;
 		this.step = d;
@@ -22,9 +20,10 @@ public class CountingTogether {
 	
 	public void everybodyCounting() {
 		Thread[] threads = new Thread[nThreads];
-		SharedCountingActor onceForAll = new SharedCountingActor(inizio,fine,step);
+		CounterResource shared = new CounterResource(inizio);
 		for (int j = 0; j < threads.length; j++) {
-			threads[j] = new Thread(onceForAll,"Contatore-"+j);
+			CounterActor runner = new CounterActor(shared,fine,step);
+			threads[j] = new Thread(runner,"Contatore-"+j);
 		}
 		for (int j = 0; j < threads.length; j++) {
 			threads[j].start();
@@ -45,7 +44,7 @@ public class CountingTogether {
 	
 	public static void main(String[] args) {
 		
-		CountingTogether app = new CountingTogether(2,12519,3,100);
+		CountingTogetherResource app = new CountingTogetherResource(2,12519,3,100);
 		app.everybodyCounting();
 		
 		Scanner s = new Scanner(new BufferedReader(new InputStreamReader(System.in)));
@@ -62,7 +61,7 @@ public class CountingTogether {
 		System.out.print("Quanti Thread vuoi avviare\n -> ");
 		int nThreads = s.nextInt();		
 		
-		app = new CountingTogether(inizio,fine,step,nThreads);
+		app = new CountingTogetherResource(inizio,fine,step,nThreads);
 		
 		app.everybodyCounting();
 				

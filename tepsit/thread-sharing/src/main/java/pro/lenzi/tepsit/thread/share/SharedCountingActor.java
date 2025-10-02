@@ -2,7 +2,7 @@ package pro.lenzi.tepsit.thread.share;
 
 import pro.lenzi.thread.util.ThreadTool;
 
-public class SharedCounter implements Runnable {
+public class SharedCountingActor implements Runnable {
 
 	private static final long SLEEPY_MITIGATION = 21;
 	
@@ -12,7 +12,7 @@ public class SharedCounter implements Runnable {
 	
 	private int corrente;
 	
-	public SharedCounter(int inizio, int fine, int passo) {
+	public SharedCountingActor(int inizio, int fine, int passo) {
 		super();
 		this.inizio = inizio;
 		this.fine = fine;
