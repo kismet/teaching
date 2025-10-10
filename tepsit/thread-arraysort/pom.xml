@@ -1,0 +1,13 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>pro.lenzi.tepsit</groupId>
+  <artifactId>thread-arraysort</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>Confronto di tecniche di Ordinamento</name>
+  <description>
+  	Creare un applicazione che delega l'ordinamento a N thread 
+  	dove ogniuno ordina un suo blocco e poi il tutto viene aggregato 
+  	insieme. L'applicazione mostra anche un confronto con un ordinamento
+  	single-thread e con l'uso dell'ordinamento nativo di Java
+  </description>
+</project>
