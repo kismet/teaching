@@ -2,6 +2,12 @@ package pro.lenzi.util;
 
 public class Threads {
 
+	/**
+	 * Un metodo di utilità per far aspettare "esattamente" il tempo
+	 * indicato, senza preoccuparsi di interruzioni
+	 * 
+	 * @param ms
+	 */
 	public static void realSleep(long ms) {
 		long end=System.currentTimeMillis()+ms;
 		do {
@@ -14,6 +20,9 @@ public class Threads {
 		}while(end > System.currentTimeMillis());
 	}
 
+	/**
+	 * @see #realSleep(long)
+	 */
 	public static void realSleep(int ms) {
 		realSleep(ms);
 	}
