@@ -1,0 +1,52 @@
+@startuml
+class MultiThreadApp [[java:pro.lenzi.tepsit.thread.multiple.MultiThreadApp]] #lightgreen {
+	-{static} inizio: int
+	-{static} fine: int
+	-{static} step: int
+	-{static} nThreads: int
+	-startThemAll(): void
+	-whoIsCounting(): void
+	-noZombieAllowed(): void
+	+{static} main(args: String[]): void
+}
+
+
+class FriendlyCounter [[java:pro.lenzi.tepsit.thread.multiple.FriendlyCounter]] #lightgreen{
+	-{static} NUMBER_PER_ROWS: int
+	-{static} SLEEPY_MITIGATION: long
+	~inizio: int
+	~fine: int
+	~passo: int
+	~friendly: boolean
+	-corrente: int
+	+FriendlyCounter(inizio: int, fine: int, passo: int)
+	+beNice(): void
+	+conta(): void
+	+run(): void
+}
+interface Runnable #yellow {
+	{abstract} +run():void
+}
+
+class Thread #lightyellow {
+	-id: Long
+	-name: String
+	--
+	+Thread(r: Runnable)
+	+**Thread(r: Runnable,name: String)**  
+	--
+	+getId(): Long
+	+getName(): String
+	+setName(name: String): void
+	+**start(): void**
+}
+Runnable <|.. FriendlyCounter
+
+MultiThreadApp .right.> FriendlyCounter : <<//create//>>
+
+Thread .right.> Runnable : <<//use//>>
+@enduml
+Thread .[#red].> FriendlyCounter : <<//usa//>> 
+
+MultiThreadApp .[#red]up.> Thread : <<//create//>>
+@enduml
