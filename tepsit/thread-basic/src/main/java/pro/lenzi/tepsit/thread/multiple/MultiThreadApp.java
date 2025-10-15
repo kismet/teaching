@@ -32,12 +32,15 @@ public class MultiThreadApp {
 	}	
 	
 	public void noZombieAllowed() {
+		//Tutto il codice che segue viene eseguito dal Thread del Main
 		Thread[] threads = new Thread[nThreads];
 		for (int j = 0; j < threads.length; j++) {
 			FriendlyCounter c = new FriendlyCounter(inizio,fine,step);
 			threads[j] = new Thread(c,"Contatore-"+j);
 		}
 		for (int j = 0; j < threads.length; j++) {
+			//Avvio i Thread che eseguiranno il codice run della classe
+			//FriendlyCounter (vedi riga #38)
 			threads[j].start();
 		}
 		for (int j = 0; j < threads.length; j++) {
