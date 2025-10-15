@@ -39,4 +39,22 @@ public class Files {
 		return (String[]) lines.toArray(new String[] {});
 	}
 	
+	
+	public static boolean createTextFile(String path,String[] lines) {
+		FileOutputStream fos = null;
+		try {
+			fos = new FileOutputStream(path);
+		} catch (FileNotFoundException e) {
+			return false;
+		}
+		
+		PrintWriter pw = new PrintWriter(new BufferedOutputStream(fos));
+		for (int i = 0; i < lines.length; i++) {
+			pw.println(lines[i]);
+		}
+		pw.flush();
+		pw.close();
+		return true;
+	}
+	
 }
