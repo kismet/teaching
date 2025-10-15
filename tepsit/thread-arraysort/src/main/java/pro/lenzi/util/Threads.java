@@ -27,4 +27,16 @@ public class Threads {
 		realSleep(ms);
 	}
 	
+	public static void joinAll(Thread[] threads) {
+		for (int j = 0; j < threads.length; j++) {
+			try {
+				if(threads[j].isAlive()) {
+					threads[j].join();
+				}
+			} catch (InterruptedException e) {
+				//ignoring exception but restaring to check
+				j = 0;
+			}
+		}				
+	}
 }
