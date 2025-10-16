@@ -57,9 +57,10 @@ public class NativeSort {
 	
 	public static void main(String[] args) {
 		String path = null;
+		System.out.println("\n\nRunning "+NativeSort.class.getName());
 		if(args.length>0) {
 			System.out.printf(
-					"Uso %s come nome del file da elaborare",args[0]
+					"Uso %s come nome del file da elaborare\n",args[0]
 			);
 			path = args[0];
 		} else {
