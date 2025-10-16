@@ -171,7 +171,7 @@ public class ThreadBubleSort {
 			System.out.print("Inserisci il file da leggere\n -> ");
 			path = s.next();
 		}
-		ThreadBubleSort app = new ThreadBubleSort(path);
+		ThreadBubleSort app = new ThreadBubleSort(path, 16);
 		app.avvia();
 	}
 }
