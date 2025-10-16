@@ -1,9 +1,8 @@
 package pro.lenzi.tepsit.arraysort.algorithm;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.InputStreamReader;
-import java.util.Arrays;
-import java.util.Iterator;
 import java.util.Scanner;
 
 import pro.lenzi.util.Files;
@@ -60,12 +59,20 @@ public class SingleBubleSort {
 			System.out.println(lines[i]);
 		}
 	}
+	
 	public void avvia() {
 		leggi();
 		ordina();
 		//stampa(10);
+		scriviRisultati();
 	}
 	
+	private void scriviRisultati() {
+		File f = new File(path);
+		File d = f.getParentFile();
+		File dst = new File(d,this.getClass().getName()+"-"+f.getName());
+		Files.createTextFile(dst.getAbsolutePath(),lines);		
+	}
 	
 	public static void main(String[] args) {
 		String path = null;
